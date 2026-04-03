@@ -59,8 +59,8 @@ const SIGNALS_JSON = `{
 }`;
 
 const tabs = [
-  { label: "/api/v1/markets/mispriced", json: MISPRICED_JSON },
-  { label: "/api/v1/signals", json: SIGNALS_JSON },
+  { label: "/markets/mispriced", json: MISPRICED_JSON },
+  { label: "/signals", json: SIGNALS_JSON },
 ] as const;
 
 export default function TabbedExamples() {
@@ -68,14 +68,14 @@ export default function TabbedExamples() {
 
   return (
     <div>
-      <div className="flex gap-6 border-b border-border mb-6">
+      <div className="flex gap-6 border-b border-border mb-0">
         {tabs.map((tab, i) => (
           <button
             key={tab.label}
             onClick={() => setActive(i)}
-            className={`pb-2 font-mono text-sm transition-colors border-b-2 -mb-px ${
+            className={`pb-2 font-mono text-sm transition-colors border-b -mb-px ${
               active === i
-                ? "border-accent text-foreground"
+                ? "border-foreground text-foreground"
                 : "border-transparent text-muted hover:text-foreground"
             }`}
           >
@@ -83,7 +83,7 @@ export default function TabbedExamples() {
           </button>
         ))}
       </div>
-      <pre className="bg-code-bg border border-border rounded-[4px] p-5 font-mono text-sm text-code-text overflow-x-auto">
+      <pre className="bg-code-bg border border-border border-t-0 rounded-b-[2px] p-5 font-mono text-sm text-code-text overflow-x-auto">
         <code
           dangerouslySetInnerHTML={{
             __html: highlightJson(tabs[active].json),
