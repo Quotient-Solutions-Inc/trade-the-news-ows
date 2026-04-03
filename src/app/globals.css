@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #e5e5e5;
+  --muted: #737373;
+  --border: #1f1f1f;
+  --surface: #111111;
+  --accent: #C596FE;
+  --link: #60a5fa;
+  --negative: #F35B28;
+  --positive: #22c55e;
+  --tertiary: #A6CEE3;
+  --code-bg: #0d0d0d;
+  --code-text: #d4d4d4;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-surface: var(--surface);
+  --color-accent: var(--accent);
+  --color-link: var(--link);
+  --color-negative: var(--negative);
+  --color-positive: var(--positive);
+  --color-tertiary: var(--tertiary);
+  --color-code-bg: var(--code-bg);
+  --color-code-text: var(--code-text);
+  --font-brand: "Instrument Sans", system-ui, sans-serif;
+  --font-headline: "Newsreader", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+pre {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+.syntax-key { color: #C596FE; }
+.syntax-string { color: #A6CEE3; }
+.syntax-number { color: #F7FF88; }
+.syntax-bool { color: #F7FF88; }
+.syntax-punctuation { color: #666666; }
